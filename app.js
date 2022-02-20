@@ -11,7 +11,7 @@ app.use(cors(), express.json(), express.urlencoded({ extended: true }));
 
 
 app.use('/admin', adminRoutes);
-
+app.use('/user', userRoutes)
 
 
 
