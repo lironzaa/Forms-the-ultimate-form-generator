@@ -5,7 +5,9 @@ const PreviewFormField = ({
     index,
 }) => {
 
-    const data = state[index];
+    const newState = [...state];
+
+    const data = newState[index];
 
     const { name = '', inputType = '', type = '', nestedname = '' } = data
 
@@ -16,24 +18,18 @@ const PreviewFormField = ({
     const isNested = nestedData ? true : false;
 
     const onNestedChange = () => {
-        const newState = [...state];
-        const data = newState[index];
         if (isNested) delete data[key];
         else data[key] = [{}];
         onChange(newState);
     }
 
     const onInputChange = e => {
-        const newState = [...state];
-        const data = newState[index];
         data[e.target.name] = e.target.value;
         onChange(newState);
     }
 
     const onNestedNameChange = e => {
         const nestedname = e.target.value;
-        const newState = [...state];
-        const data = newState[index];
         const newData = [...data[key]];
         delete data[key];
         data[nestedname + index] = newData;
@@ -46,7 +42,11 @@ const PreviewFormField = ({
         newState[index][key] = data;
         onChange(newState);
     }
-    
+
+    const onSave = (data) => {
+        data.isSaved = true;
+    }
+
 
 
     return (
@@ -54,10 +54,10 @@ const PreviewFormField = ({
             <h1>{level}:{index + 1}</h1>
             <div>
                 <input type="checkbox" checked={isNested} onChange={onNestedChange} />
-                {isNested && <input type='text' onChange={onNestedNameChange} value={nestedname} name="nestedname" placeholder={`Nested Name ${index}`} />}
+                {isNested && <input type='text' autoFocus={true} onChange={onNestedNameChange} value={nestedname} name="nestedname" placeholder={`Nested Name ${index}`} />}
             </div>
             {nestedname !== "" && nestedData && nestedData.map((_, i) => (
-                <div key={i} style={{marginLeft: '20px'}}>
+                <div key={i} style={{ marginLeft: '20px' }}>
                     <PreviewFormField
                         index={i}
                         onChange={onNestedDataChange}
@@ -65,8 +65,8 @@ const PreviewFormField = ({
                         state={nestedData}
                     />
                 </div>
-            ))} 
-             {!nestedData &&(
+            ))}
+            {!nestedData && (
                 <div>
                     <input type="text" value={name} name="name" placeholder="Name" onChange={onInputChange} />
                     <select value={inputType} name='inputType' onChange={onInputChange}>
@@ -79,7 +79,7 @@ const PreviewFormField = ({
                             <option value="number">Number</option>
                         </select>
                     )}
-                    <button>Save</button>
+                    {name !== "" && <button>Save</button>}
                 </div>
             )}
         </div>
