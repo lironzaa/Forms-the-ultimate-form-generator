@@ -5,17 +5,18 @@ const CreateField = ({
     onChange,
     state,
     index,
+    onSave
 }) => {
 
     const newState = [...state];
 
     const data = newState[index];
 
-    const { name = '', inputType = '', type = '', nestedname = '', isSaved = false } = data
+    const { name = '', inputType = 'input', type = '', isSaved = false } = data
 
-    if(isSaved) return <PreviewField {...data} />
+    if (isSaved) return <PreviewField {...data} />
 
-    const key = nestedname + index;
+    const key = name + index;
 
     const nestedData = data[key];
 
@@ -33,11 +34,11 @@ const CreateField = ({
     }
 
     const onNestedNameChange = e => {
-        const nestedname = e.target.value;
+        const name = e.target.value;
         const newData = [...data[key]];
         delete data[key];
-        data[nestedname + index] = newData;
-        data.nestedname = nestedname;
+        data[name + index] = newData;
+        data.name = name;
         onChange(newState);
     }
 
@@ -47,10 +48,12 @@ const CreateField = ({
         onChange(newState);
     }
 
-    const onSave = () => {
-        data.isSaved = true;
-        newState.push({});
-        onChange(newState);
+    const onInputSave = (data, isNested = false) => {
+        if(!isNested) {
+            data.isSaved = true;
+            newState.push({});
+        }
+        onSave(newState, isNested = true);
     }
 
 
@@ -60,18 +63,29 @@ const CreateField = ({
             <h1>{index + 1}:{level}</h1>
             <div>
                 <label><input type="checkbox" checked={isNested} onChange={onNestedChange} /> isNested</label>
-                {isNested && <input type='text' autoFocus={true} onChange={onNestedNameChange} value={nestedname} name="nestedname" placeholder={`Nested Name ${index}`} />}
+                {isNested && <input type='text' autoFocus={true} onChange={onNestedNameChange} value={name} name="name" placeholder={`Nested Name ${index}`} />}
             </div>
-            {nestedname !== "" && nestedData && nestedData.map((_, i) => (
-                <div key={i} style={{ marginLeft: '20px' }}>
-                    <CreateField
-                        index={i}
-                        onChange={onNestedDataChange}
-                        level={level + 1}
-                        state={nestedData}
-                    />
-                </div>
-            ))}
+            {name !== "" && nestedData && (
+                <>
+                    {nestedData.map((_, i) => (
+                        <div key={i} style={{ marginLeft: '20px' }}>
+                            <CreateField
+                                index={i}
+                                onChange={onNestedDataChange}
+                                level={level + 1}
+                                state={nestedData}
+                                onSave={onInputSave}
+                            />
+                        </div>
+                    ))}
+                    {nestedData[0].isSaved && (
+                        <>
+                            <br />
+                            <button onClick={() => onInputSave(newState, true)}>Save {index + 1}:{level}</button>
+                        </>
+                    )}
+                </>
+            )}
             {!nestedData && (
                 <div>
                     <input type="text" value={name} name="name" placeholder="Name" onChange={onInputChange} />
@@ -85,7 +99,7 @@ const CreateField = ({
                             <option value="number">Number</option>
                         </select>
                     )}
-                    {name !== "" && <button onClick={onSave}>Save</button>}
+                    {name !== "" && <button onClick={() => onInputSave(newState, true)}>Save</button>}
                 </div>
             )}
         </div>

@@ -7,7 +7,9 @@ const PreviewField = ({ name, inputType, type, ...props }) => {
                     {inputType === 'textarea' ? <textarea name={name}></textarea> : <input name={name} type='text' />}
                 </label>
             )}
-            {Object.keys(props).map((key, index) => <PreviewField key={index} {...props[key]} />)}
+            <div style={{ marginLeft: '20px' }}>
+                {Object.keys(props).map((key, index) => <PreviewField key={index} {...props[key]} />)}
+            </div>
         </div>
     )
 }
