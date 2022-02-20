@@ -13,19 +13,20 @@ const CreateField = ({
 
     const data = newState[index];
 
-    const { name = '', inputType = 'input', type = '', isSaved = false } = data
+    const { name = '', isSaved = false } = data
 
     if (isSaved) return <PreviewField {...data} />
 
-    const key = name + index;
+    const key = name;
 
     const nestedData = data[key];
 
     const isNestedData = nestedData ? true : false;
 
-    const onNestedChange = () => {
-        if (isNestedData) delete data[key];
-        else data[key] = [{}];
+    const onNestedChange = (e) => {
+        const checked = e.target.checked;
+        if (checked) data[key] = [{}];
+        else delete data[key];
         onChange(newState);
     }
 
@@ -38,19 +39,15 @@ const CreateField = ({
         const name = e.target.value;
         const newData = [...data[key]];
         delete data[key];
-        data[name + index] = newData;
+        data[name] = newData;
         data.name = name;
         onChange(newState);
     }
 
-    const onNestedDataChange = (data) => {
-        const newState = [...state];
-        newState[index][key] = data;
-        onChange(newState);
-    }
+    const onNestedDataChange = () => onChange(newState);
 
     const onInputSave = (newData = true) => {
-        if(typeof newData === 'boolean') {
+        if (typeof newData === 'boolean') {
             data.isSaved = true;
             newState.push({});
         }
@@ -91,16 +88,6 @@ const CreateField = ({
             {!nestedData && (
                 <div>
                     <input type="text" value={name} name="name" placeholder="Name" onChange={onInputChange} />
-                    <select value={inputType} name='inputType' onChange={onInputChange}>
-                        <option value='input'>Input</option>
-                        <option value='textarea'>TextArea</option>
-                    </select>
-                    {inputType === 'input' && (
-                        <select name='type' value={type} onChange={onInputChange}>
-                            <option value='text'>Text</option>
-                            <option value="number">Number</option>
-                        </select>
-                    )}
                     {name !== "" && <button onClick={() => onInputSave(true)}>Save</button>}
                 </div>
             )}
