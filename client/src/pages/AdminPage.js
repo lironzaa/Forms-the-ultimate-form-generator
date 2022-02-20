@@ -1,7 +1,5 @@
 import { useState } from 'react';
-import CreateInput from '../components/Admin/CreateInput';
-import PreviewForm from '../components/Admin/PreviewForm';
-// import SaveForm from '../components/Admin/SaveForm';
+import CreateFormField from '../components/Admin/CreateFormField';
 
 const AdminPage = () => {
     const [form, setForm] = useState([]);
@@ -19,8 +17,7 @@ const AdminPage = () => {
     return (
         <div>
             <h1>Admin Page</h1>
-            <CreateInput onSubmit={onSubmit} />
-            <PreviewForm form={form} onDelete={onDelete} />
+            <CreateFormField onSubmit={onSubmit} />
         </div>
     )
 }
