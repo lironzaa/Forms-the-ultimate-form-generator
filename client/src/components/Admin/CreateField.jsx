@@ -1,4 +1,6 @@
-const PreviewFormField = ({
+import PreviewField from "./PreviewField";
+
+const CreateField = ({
     level = 0,
     onChange,
     state,
@@ -9,7 +11,9 @@ const PreviewFormField = ({
 
     const data = newState[index];
 
-    const { name = '', inputType = '', type = '', nestedname = '' } = data
+    const { name = '', inputType = '', type = '', nestedname = '', isSaved = false } = data
+
+    if(isSaved) return <PreviewField {...data} />
 
     const key = nestedname + index;
 
@@ -43,22 +47,24 @@ const PreviewFormField = ({
         onChange(newState);
     }
 
-    const onSave = (data) => {
+    const onSave = () => {
         data.isSaved = true;
+        newState.push({});
+        onChange(newState);
     }
 
 
 
     return (
         <div>
-            <h1>{level}:{index + 1}</h1>
+            <h1>{index + 1}:{level}</h1>
             <div>
-                <input type="checkbox" checked={isNested} onChange={onNestedChange} />
+                <label><input type="checkbox" checked={isNested} onChange={onNestedChange} /> isNested</label>
                 {isNested && <input type='text' autoFocus={true} onChange={onNestedNameChange} value={nestedname} name="nestedname" placeholder={`Nested Name ${index}`} />}
             </div>
             {nestedname !== "" && nestedData && nestedData.map((_, i) => (
                 <div key={i} style={{ marginLeft: '20px' }}>
-                    <PreviewFormField
+                    <CreateField
                         index={i}
                         onChange={onNestedDataChange}
                         level={level + 1}
@@ -79,11 +85,11 @@ const PreviewFormField = ({
                             <option value="number">Number</option>
                         </select>
                     )}
-                    {name !== "" && <button>Save</button>}
+                    {name !== "" && <button onClick={onSave}>Save</button>}
                 </div>
             )}
         </div>
     )
 }
 
-export default PreviewFormField;
+export default CreateField;
