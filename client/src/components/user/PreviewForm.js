@@ -1,19 +1,31 @@
-const PreviewForm = ({ name, ...props }) => {
-    const propName = Object.keys(props)[0];
+const PreviewForm = ({ onChange, inp }) => {
+    const name = Object.keys(inp)[0];
+    const value = inp[name];
+    const onInputChange = e => {
+        inp[name] = e.target.value;
+        onChange();
+    }
     return (
         <div>
-            {name ? (
-                <label style={{ display: 'block' }}>
-                    {name} <br />
-                    <input required={true} type='text' name={name} />
-                </label>
-            ) : (
+            {Array.isArray(value) ? (
                 <>
-                    {propName} <br />
+                    {name}
                     <div style={{ marginLeft: '20px' }}>
-                        {props[propName].map((inp, index) => <PreviewForm {...inp} key={index} />)}
+                        {value.map((inp, index) => (
+                            <PreviewForm
+                                inp={inp}
+                                key={index}
+                                onChange={onChange}
+                            />
+                        ))}
                     </div>
                 </>
+            ) : (
+                <label style={{ display: 'block' }}>
+                    {name} <br />
+                    <input required={true} onChange={onInputChange} value={inp[name]} type='text' name={name} />
+                </label>
+
             )}
         </div>
     )

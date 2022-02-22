@@ -1,36 +1,48 @@
-import { useParams } from 'react-router-dom';
-import { useState, useEffect } from 'react';
+import {useParams} from 'react-router-dom';
+import {useState, useEffect} from 'react';
 import axios from 'axios';
 import PreviewForm from '../components/user/PreviewForm';
 
+
 const FormPage = () => {
     const formID = useParams().formID;
-    const [{ isLoading, data, err }, setStatus] = useState({ isLoading: true });
-    const [form, setForm] = useState({});
-    
+    const [{isLoading, form, err}, setStatus] = useState({isLoading: true});
+
+
     useEffect(() => {
         axios.get(`/user/form/${formID}`)
-            .then(res => setStatus({ data: res.data }))
-            .catch(err => setStatus({ err: err }));
+            .then(res => setStatus({form: [{Email: ''}, ...res.data.form]}))
+            .catch(err => setStatus({err: err?.response?.data?.message || err.message}))
     }, [])
 
 
     if (isLoading) return <h1>Loading...</h1>
-    if (err) return <h1 style={{ color: 'red' }}>{err.message}</h1>
+    if (err) return <h1 style={{color: 'red'}}>{err}</h1>
+    const newForm = [...form];
+    return <Main formID={formID} form={newForm} onChange={() => setStatus({form: newForm})}/>
+}
+
+const Main = ({form, onChange, formID}) => {
+    const [{isLoading, err}, setStatus] = useState({isLoading: false});
 
     const onSubmit = e => {
-        e.preventDefaul();
+        e.preventDefault();
+        setStatus({isLoading: true});
+        const data = {form: form.slice(1), email: form[0].Email};
+        axios.post(`/user/form/${formID}`, data)
+            .then(res => {
+                alert('Form is submitted');
+                setStatus({});
+            })
+            .catch(err => setStatus({err: err?.response?.data?.message || err.message}))
     }
 
     return (
         <form onSubmit={onSubmit}>
-            <label style={{ display: 'block' }}>
-                Email <br />
-                <input type='email' name='email' required={true} />
-            </label>
-            {data.form.map((inp, index) => <PreviewForm key={index} {...inp} />)}
-            <br />
-            <button>Save</button>
+            {form.map((inp, index) => <PreviewForm onChange={onChange} key={index} inp={inp}/>)}
+            <br/>
+            {isLoading ? 'Submitting...' : <button>Save</button>}
+            <h3 style={{color: 'red'}}>{err}</h3>
         </form>
     )
 }
