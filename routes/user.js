@@ -2,7 +2,6 @@ const router = require('express').Router();
 const Form = require('../modals/Form');
 const SubmittedForm = require('../modals/SubmittedForm');
 
-
 router.get('/forms', (req, res) => {
     Form.find()
         .then(forms => res.status(200).json(forms))
@@ -33,6 +32,5 @@ router.post('/form/:formID', (req, res) => {
         .then(doc => res.status(201).json(doc))
         .catch(err => res.status(err.status || 501).json({ err: err.errors, message: err.message }))
 })
-
 
 module.exports = router;
