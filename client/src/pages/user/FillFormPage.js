@@ -1,48 +1,44 @@
 import { useParams } from 'react-router-dom';
 import { useState, useEffect } from 'react';
-import axios from 'axios';
-import PreviewForm from '../../components/user/PreviewForm';
+import FormFields from "../../components/user/FormFields/FormFields";
+import { apiService } from "../../api/api";
 
 const FillFormPage = () => {
     const formId = useParams().formId;
-    const [{ isLoading, form, err }, setStatus] = useState({ isLoading: true });
+    const [ formFields, setFormFields ] = useState([]);
+    const [ isLoading, setIsLoading ] = useState(true);
+    const [ error, setError ] = useState(false);
+    const [ isSubmitting, setIsSubmitting ] = useState(false);
 
     useEffect(() => {
-        axios.get(`/user/form/${formId}`)
-            .then(res => setStatus({ form: [{ Email: '' }, ...res.data.form] }))
-            .catch(err => setStatus({ err: err?.response?.data?.message || err.message }))
+        apiService.getForm(formId)
+            .then(res => {
+                setFormFields([ { Email: '' }, ...res.data.form ]);
+                setIsLoading(false);
+            })
+            .catch(err => setError(err?.response?.data?.message || err.message))
     }, [])
-
-    if (isLoading) return <h1>Loading...</h1>
-    if (err) return <h1 style={{ color: 'red' }}>{err}</h1>
-    const newForm = [...form];
-    return <Main formId={formId} form={newForm} onChange={() => setStatus({ form: newForm })}/>
-}
-
-const Main = ({ form, onChange, formId }) => {
-    const [{ isLoading, err }, setStatus] = useState({ isLoading: false });
 
     const onSubmit = e => {
         e.preventDefault();
-        setStatus({ isLoading: true });
-        const data = { form: form.slice(1), email: form[0].Email };
-        axios.post(`/user/form/${formId}`, data)
+        setIsSubmitting(true);
+        const data = { form: formFields.slice(1), email: formFields[0].Email };
+        apiService.saveForm(formId, data)
             .then(res => {
                 alert('Form is submitted');
-                setStatus({});
+                setFormFields([]);
             })
-            .catch(err => setStatus({ err: err?.response?.data?.message || err.message }))
+            .catch(err => setError(err?.response?.data?.message || err.message))
     }
 
+    if (isLoading) return <h1>Loading...</h1>
+    if (error) return <h1 style={{ color: 'red' }}>{error}</h1>
     return (
         <div>
             <h1>Fill Form Page</h1>
-            <form onSubmit={onSubmit}>
-                {form.map((inp, index) => <PreviewForm onChange={onChange} key={index} inp={inp}/>)}
-                <br/>
-                {isLoading ? 'Submitting...' : <button>Save</button>}
-                <h3 style={{ color: 'red' }}>{err}</h3>
-            </form>
+            <FormFields formId={formId} fields={formFields} onSubmit={onSubmit} isSubmitting={isSubmitting}
+                        error={error}
+                        onChange={() => setFormFields([ ...formFields ])}/>
         </div>
     )
 }
