@@ -5,16 +5,9 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="a1b20d3a-3d13-425e-a9c5-70ecb14abc28" name="Changes" comment="">
-      <change afterPath="$PROJECT_DIR$/client/src/components/admin/SubmittedFormField/SubmittedFormField.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/vcs.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/vcs.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/client/src/api/api.js" beforeDir="false" afterPath="$PROJECT_DIR$/client/src/api/api.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/client/src/components/CreateForm/CreateForm.js" beforeDir="false" afterPath="$PROJECT_DIR$/client/src/components/admin/CreateFormField/CreateFormField.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/client/src/components/NavBar/NavBar.js" beforeDir="false" afterPath="$PROJECT_DIR$/client/src/components/Layout/NavBar/NavBar.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/client/src/components/SubmittedForm/SubmittedForm.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/client/src/index.js" beforeDir="false" afterPath="$PROJECT_DIR$/client/src/index.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/client/src/pages/admin/CreateFormPage.js" beforeDir="false" afterPath="$PROJECT_DIR$/client/src/pages/admin/CreateFormPage.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/client/src/pages/admin/SubmittedFormsPage.js" beforeDir="false" afterPath="$PROJECT_DIR$/client/src/pages/admin/SubmittedFormsPage.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/client/src/pages/user/FormsPage.js" beforeDir="false" afterPath="$PROJECT_DIR$/client/src/pages/user/FormsPage.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/client/package.json" beforeDir="false" afterPath="$PROJECT_DIR$/client/package.json" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -33,6 +26,7 @@
     <option name="stateVersion" value="1" />
   </component>
   <component name="ProjectId" id="25R4bEEEItW6G1esY3Bbs96M8OE" />
+  <component name="ProjectLevelVcsManager" settingsEditedManually="true" />
   <component name="ProjectViewState">
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
@@ -80,7 +74,7 @@
       <workItem from="1645570347556" duration="514000" />
       <workItem from="1645570917120" duration="647000" />
       <workItem from="1645693442891" duration="21892000" />
-      <workItem from="1645731503862" duration="11443000" />
+      <workItem from="1645731503862" duration="12733000" />
     </task>
     <servers />
   </component>
