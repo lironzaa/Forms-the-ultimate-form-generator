@@ -22,8 +22,8 @@ const PreviewForm = ({ onChange, inp }) => {
                 </>
             ) : (
                 <label style={{ display: 'block' }}>
-                    {name} <br />
-                    <input required={true} onChange={onInputChange} value={inp[name]} type='text' name={name} />
+                    {name} <br/>
+                    <input required={true} onChange={onInputChange} value={inp[name]} type='text' name={name}/>
                 </label>
 
             )}

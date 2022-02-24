@@ -23,33 +23,33 @@ const CreateForm = ({ onChange, index, form }) => {
     }
 
     const onAddNewField = () => {
-        form.push({'': ''})
+        form.push({ '': '' })
         onChange();
     }
-    
+
     return (
         <div>
-
             <div>
                 <label>
-                    <input type='checkbox' checked={isNested} onChange={onToggleNested} />
+                    <input type='checkbox' checked={isNested} onChange={onToggleNested}/>
                     is Nested
                 </label>
-                {isNested && <input type='text' value={name} onChange={onPropertyNameChange} style={{ marginLeft: '20px' }} placeholder='Nested Property Name' />}
+                {isNested &&
+                    <input type='text' value={name} onChange={onPropertyNameChange} style={{ marginLeft: '20px' }}
+                           placeholder='Nested Property Name'/>}
             </div>
-
-            <br />
-
+            <br/>
             <div style={{ marginLeft: '20px' }}>
-                {isNested ? value.map((inp, index) => <CreateForm form={value} index={index} key={index} inp={inp} onChange={onChange} />) : (
+                {isNested ? value.map((inp, index) => <CreateForm form={value} index={index} key={index} inp={inp}
+                                                                  onChange={onChange}/>) : (
                     <div>
-                        <input type='text' value={name} placeholder="Name" onChange={onPropertyNameChange} name={name} />
+                        <input type='text' value={name} placeholder="Name" onChange={onPropertyNameChange} name={name}/>
                         {form.length > 1 && <button onClick={onDelete}>Delete</button>}
                         {form.length === index + 1 && <button onClick={onAddNewField}>Add More Field</button>}
                     </div>
                 )}
             </div>
-            <br />
+            <br/>
         </div>
     )
 }

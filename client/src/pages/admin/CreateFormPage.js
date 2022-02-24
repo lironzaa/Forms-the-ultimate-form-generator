@@ -1,9 +1,8 @@
 import { useState } from "react";
-import CreateForm from "../components/CreateForm/CreateForm";
+import CreateForm from "../../components/CreateForm/CreateForm";
 import axios from 'axios';
 
 const defaultValue = [{ '': '' }]
-
 
 const CreateFormPage = () => {
     const [state, setState] = useState(defaultValue);
@@ -19,11 +18,12 @@ const CreateFormPage = () => {
             .catch(err => console.log(err));
     }
     return (
-        <>
-            {form.map((inp, index) => <CreateForm onChange={onChange} index={index} form={form} key={index} />)}
-            <br />
+        <div>
+            <h1>Create Form Page</h1>
+            {form.map((inp, index) => <CreateForm onChange={onChange} index={index} form={form} key={index}/>)}
+            <br/>
             <button onClick={onSaveForm}>Save</button>
-        </>
+        </div>
     )
 }
 

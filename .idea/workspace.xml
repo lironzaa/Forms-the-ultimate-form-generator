@@ -5,11 +5,23 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="a1b20d3a-3d13-425e-a9c5-70ecb14abc28" name="Changes" comment="">
-      <change beforePath="$PROJECT_DIR$/.env" beforeDir="false" afterPath="$PROJECT_DIR$/.env" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/client/src/api/api.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/client/src/components/NavBar/NavBar.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/client/src/pages/user/FillFormPage.js" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app.js" beforeDir="false" afterPath="$PROJECT_DIR$/app.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/client/src/pages/AdminPage.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/routes/admin.js" beforeDir="false" afterPath="$PROJECT_DIR$/routes/admin.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/client/package-lock.json" beforeDir="false" afterPath="$PROJECT_DIR$/client/package-lock.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/client/package.json" beforeDir="false" afterPath="$PROJECT_DIR$/client/package.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/client/src/App.js" beforeDir="false" afterPath="$PROJECT_DIR$/client/src/App.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/client/src/components/CreateForm/CreateForm.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/client/src/components/CreateForm/CreateForm.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/client/src/components/SubmittedForm/SubmittedForm.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/client/src/components/SubmittedForm/SubmittedForm.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/client/src/components/user/PreviewForm.js" beforeDir="false" afterPath="$PROJECT_DIR$/client/src/components/user/PreviewForm.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/client/src/index.js" beforeDir="false" afterPath="$PROJECT_DIR$/client/src/index.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/client/src/pages/CreateFormPage.js" beforeDir="false" afterPath="$PROJECT_DIR$/client/src/pages/admin/CreateFormPage.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/client/src/pages/FormPage.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/client/src/pages/SubmittedFormsPage.js" beforeDir="false" afterPath="$PROJECT_DIR$/client/src/pages/admin/SubmittedFormsPage.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/client/src/pages/UserPage.js" beforeDir="false" afterPath="$PROJECT_DIR$/client/src/pages/user/FormsPage.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/client/yarn.lock" beforeDir="false" afterPath="$PROJECT_DIR$/client/yarn.lock" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/modals/SubmittedForm.js" beforeDir="false" afterPath="$PROJECT_DIR$/modals/SubmittedForm.js" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/routes/user.js" beforeDir="false" afterPath="$PROJECT_DIR$/routes/user.js" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -37,6 +49,9 @@
     <property name="RunOnceActivity.OpenProjectViewOnStart" value="true" />
     <property name="RunOnceActivity.ShowReadmeOnStart" value="true" />
     <property name="WebServerToolWindowFactoryState" value="false" />
+    <property name="javascript.nodejs.core.library.configured.version" value="16.14.0" />
+    <property name="javascript.nodejs.core.library.typings.version" value="16.11.25" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$/client/src/components" />
     <property name="node.js.detected.package.eslint" value="true" />
     <property name="node.js.detected.package.tslint" value="true" />
     <property name="node.js.selected.package.eslint" value="(autodetect)" />
@@ -45,6 +60,15 @@
     <property name="settings.editor.selected.configurable" value="preferences.sourceCode.JavaScript" />
     <property name="ts.external.directory.path" value="C:\Program Files\JetBrains\WebStorm 2021.3.2\plugins\JavaScriptLanguage\jsLanguageServicesImpl\external" />
     <property name="vue.rearranger.settings.migration" value="true" />
+  </component>
+  <component name="RecentsManager">
+    <key name="CopyFile.RECENT_KEYS">
+      <recent name="C:\projects\EyeClick - Forms Generator\client\src\components" />
+    </key>
+    <key name="MoveFile.RECENT_KEYS">
+      <recent name="C:\projects\EyeClick - Forms Generator\client\src\pages\admin" />
+      <recent name="C:\projects\EyeClick - Forms Generator\client\src\pages\user" />
+    </key>
   </component>
   <component name="SpellCheckerSettings" RuntimeDictionaries="0" Folders="0" CustomDictionaries="0" DefaultDictionary="application-level" UseSingleDictionary="true" transferred="true" />
   <component name="TaskManager">
@@ -60,6 +84,7 @@
       <workItem from="1645569507155" duration="63000" />
       <workItem from="1645570347556" duration="514000" />
       <workItem from="1645570917120" duration="647000" />
+      <workItem from="1645693442891" duration="15129000" />
     </task>
     <servers />
   </component>

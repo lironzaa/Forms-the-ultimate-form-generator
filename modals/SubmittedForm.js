@@ -2,7 +2,7 @@ const { Schema, model } = require('mongoose');
 
 const SubmittedForm = new Schema({
     form: [Map],
-    formID: {
+    formId: {
         required: true,
         type: Schema.Types.ObjectId,
         ref: 'forms'

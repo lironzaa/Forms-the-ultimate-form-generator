@@ -2,7 +2,7 @@ import { useEffect, useState } from 'react';
 import axios from 'axios';
 import { Link } from 'react-router-dom';
 
-const UserPage = () => {
+const FormsPage = () => {
     const [{ isLoading, data, err }, setStatus] = useState({ isLoading: true });
     useEffect(() => {
         axios.get('/user/forms')
@@ -14,7 +14,7 @@ const UserPage = () => {
     if (err) return <h1 style={{ color: 'red' }}>{err}</h1>
     return (
         <div>
-            <h1>User Page</h1>
+            <h1>Forms Page</h1>
             {data.map(form => (
                 <Link style={{ display: 'block' }} to={`/form/${form._id}`} key={form._id}>
                     {form._id}
@@ -24,4 +24,4 @@ const UserPage = () => {
     )
 }
 
-export default UserPage;
+export default FormsPage;
