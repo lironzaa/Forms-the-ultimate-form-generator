@@ -5,12 +5,15 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="a1b20d3a-3d13-425e-a9c5-70ecb14abc28" name="Changes" comment="">
-      <change afterPath="$PROJECT_DIR$/client/src/components/user/FormFields/FormFields.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/client/src/components/user/FormItem/FormItem.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/client/src/components/admin/SubmittedFormField/SubmittedFormField.js" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/client/src/api/api.js" beforeDir="false" afterPath="$PROJECT_DIR$/client/src/api/api.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/client/src/components/user/PreviewForm.js" beforeDir="false" afterPath="$PROJECT_DIR$/client/src/components/user/FormField/FormField.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/client/src/pages/user/FillFormPage.js" beforeDir="false" afterPath="$PROJECT_DIR$/client/src/pages/user/FillFormPage.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/client/src/components/CreateForm/CreateForm.js" beforeDir="false" afterPath="$PROJECT_DIR$/client/src/components/admin/CreateFormField/CreateFormField.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/client/src/components/NavBar/NavBar.js" beforeDir="false" afterPath="$PROJECT_DIR$/client/src/components/Layout/NavBar/NavBar.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/client/src/components/SubmittedForm/SubmittedForm.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/client/src/index.js" beforeDir="false" afterPath="$PROJECT_DIR$/client/src/index.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/client/src/pages/admin/CreateFormPage.js" beforeDir="false" afterPath="$PROJECT_DIR$/client/src/pages/admin/CreateFormPage.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/client/src/pages/admin/SubmittedFormsPage.js" beforeDir="false" afterPath="$PROJECT_DIR$/client/src/pages/admin/SubmittedFormsPage.js" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/client/src/pages/user/FormsPage.js" beforeDir="false" afterPath="$PROJECT_DIR$/client/src/pages/user/FormsPage.js" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -55,11 +58,11 @@
       <recent name="C:\projects\EyeClick - Forms Generator\client\src\components" />
     </key>
     <key name="MoveFile.RECENT_KEYS">
+      <recent name="C:\projects\EyeClick - Forms Generator\client\src\components\admin" />
+      <recent name="C:\projects\EyeClick - Forms Generator\client\src\components\user" />
+      <recent name="C:\projects\EyeClick - Forms Generator\client\src\components\Layout" />
       <recent name="C:\projects\EyeClick - Forms Generator\client\src\components\user\FormField" />
       <recent name="C:\projects\EyeClick - Forms Generator\client\src\components\user\FormFields" />
-      <recent name="C:\projects\EyeClick - Forms Generator\client\src\components\user" />
-      <recent name="C:\projects\EyeClick - Forms Generator\client\src\pages\admin" />
-      <recent name="C:\projects\EyeClick - Forms Generator\client\src\pages\user" />
     </key>
   </component>
   <component name="SpellCheckerSettings" RuntimeDictionaries="0" Folders="0" CustomDictionaries="0" DefaultDictionary="application-level" UseSingleDictionary="true" transferred="true" />
@@ -77,7 +80,7 @@
       <workItem from="1645570347556" duration="514000" />
       <workItem from="1645570917120" duration="647000" />
       <workItem from="1645693442891" duration="21892000" />
-      <workItem from="1645731503862" duration="8647000" />
+      <workItem from="1645731503862" duration="11443000" />
     </task>
     <servers />
   </component>

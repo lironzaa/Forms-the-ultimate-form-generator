@@ -12,7 +12,7 @@ const FormsPage = () => {
                 setForms(res.data);
                 setIsLoading(false);
             })
-            .catch(err => setError({ err: err?.response?.data?.message || err.message }))
+            .catch(err => setError(err?.response?.data?.message || err.message))
     }, [])
 
     if (isLoading) return <h1>Loading...</h1>

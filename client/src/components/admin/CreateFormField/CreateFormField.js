@@ -1,19 +1,18 @@
-const CreateForm = ({ onChange, index, form }) => {
-    const inp = form[index];
-    const name = Object.keys(inp)[0];
+const CreateFormField = ({ onChange, index, form }) => {
+    const field = form[index];
+    const fieldValue = Object.keys(field)[0];
 
     const onToggleNested = e => {
         const checked = e.target.checked;
-        inp[name] = checked ? [{ '': '' }] : '';
+        field[fieldValue] = checked ? [ { '': '' } ] : '';
         onChange();
     }
 
-    const value = inp[name];
+    const value = field[fieldValue];
     const isNested = Array.isArray(value);
 
     const onPropertyNameChange = e => {
-        const name = e.target.value;
-        form[index] = { [name]: '' };
+        form[index] = { [e.target.value]: '' };
         onChange();
     }
 
@@ -35,15 +34,17 @@ const CreateForm = ({ onChange, index, form }) => {
                     is Nested
                 </label>
                 {isNested &&
-                    <input type='text' value={name} onChange={onPropertyNameChange} style={{ marginLeft: '20px' }}
+                    <input type='text' value={fieldValue} onChange={onPropertyNameChange} style={{ marginLeft: '20px' }}
                            placeholder='Nested Property Name'/>}
             </div>
             <br/>
             <div style={{ marginLeft: '20px' }}>
-                {isNested ? value.map((inp, index) => <CreateForm form={value} index={index} key={index} inp={inp}
-                                                                  onChange={onChange}/>) : (
+                {isNested ? value.map((field, index) => <CreateFormField form={value} index={index} key={index}
+                                                                         field={field}
+                                                                         onChange={onChange}/>) : (
                     <div>
-                        <input type='text' value={name} placeholder="Name" onChange={onPropertyNameChange} name={name}/>
+                        <input type='text' value={fieldValue} placeholder="Name" onChange={onPropertyNameChange}
+                               name={fieldValue}/>
                         {form.length > 1 && <button onClick={onDelete}>Delete</button>}
                         {form.length === index + 1 && <button onClick={onAddNewField}>Add More Field</button>}
                     </div>
@@ -54,4 +55,4 @@ const CreateForm = ({ onChange, index, form }) => {
     )
 }
 
-export default CreateForm;
+export default CreateFormField;

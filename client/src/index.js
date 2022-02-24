@@ -9,7 +9,7 @@ import FillFormPage from "./pages/user/FillFormPage";
 import FormsPage from "./pages/user/FormsPage";
 import SubmittedFormsPage from "./pages/admin/SubmittedFormsPage";
 import CreateFormPage from "./pages/admin/CreateFormPage";
-import NavBar from "./components/NavBar/NavBar";
+import NavBar from "./components/Layout/NavBar/NavBar";
 
 const rootElement = document.getElementById("root");
 render(
