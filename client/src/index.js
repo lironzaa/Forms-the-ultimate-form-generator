@@ -10,10 +10,12 @@ import FormsPage from "./pages/user/FormsPage";
 import SubmittedFormsPage from "./pages/admin/SubmittedFormsPage";
 import CreateFormPage from "./pages/admin/CreateFormPage";
 import NavBar from "./components/Layout/NavBar/NavBar";
+import { ChakraProvider } from "@chakra-ui/react";
 
 const rootElement = document.getElementById("root");
 render(
     <BrowserRouter>
+      <ChakraProvider>
         <App/>
         <NavBar/>
         <Routes>
@@ -22,6 +24,7 @@ render(
             <Route path="admin" element={<SubmittedFormsPage/>}/>
             <Route path="admin/form" element={<CreateFormPage/>}/>
         </Routes>
+      </ChakraProvider>
     </BrowserRouter>,
     rootElement
 );

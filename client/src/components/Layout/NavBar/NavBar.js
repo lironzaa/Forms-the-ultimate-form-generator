@@ -1,16 +1,13 @@
 import React from "react";
-import { Link } from "react-router-dom";
+import { Link as ReactRouter } from "react-router-dom";
+import { Container, Link } from "@chakra-ui/react";
 
 const NavBar = () => {
   return (
-      <nav
-          style={{
-            borderBottom: "solid 1px",
-            paddingBottom: "1rem",
-          }}>
-        <Link to="/">User</Link> |{" "}
-        <Link to="/admin">Admin</Link>
-      </nav>
+    <Container pb={'1rem'} mb={'1rem'} borderBottom={"solid 1px black"}>
+      <Link as={ReactRouter} color={"#2B6CB0"} to="/">User</Link> |{" "}
+      <Link as={ReactRouter} color={"#2B6CB0"} to="/admin">Admin</Link>
+    </Container>
   );
 };
 

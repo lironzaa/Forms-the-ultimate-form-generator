@@ -5,14 +5,34 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="a1b20d3a-3d13-425e-a9c5-70ecb14abc28" name="Changes" comment="">
-      <change beforePath="$PROJECT_DIR$/.idea/vcs.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/vcs.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/client/src/components/common/AppSpinner.js" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/client/package.json" beforeDir="false" afterPath="$PROJECT_DIR$/client/package.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/client/src/App.js" beforeDir="false" afterPath="$PROJECT_DIR$/client/src/App.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/client/src/components/Layout/NavBar/NavBar.js" beforeDir="false" afterPath="$PROJECT_DIR$/client/src/components/Layout/NavBar/NavBar.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/client/src/components/admin/CreateFormField/CreateFormField.js" beforeDir="false" afterPath="$PROJECT_DIR$/client/src/components/admin/CreateFormField/CreateFormField.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/client/src/components/admin/SubmittedFormField/SubmittedFormField.js" beforeDir="false" afterPath="$PROJECT_DIR$/client/src/components/admin/SubmittedFormField/SubmittedFormField.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/client/src/components/user/FormField/FormField.js" beforeDir="false" afterPath="$PROJECT_DIR$/client/src/components/user/FormField/FormField.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/client/src/components/user/FormFields/FormFields.js" beforeDir="false" afterPath="$PROJECT_DIR$/client/src/components/user/FormFields/FormFields.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/client/src/components/user/FormItem/FormItem.js" beforeDir="false" afterPath="$PROJECT_DIR$/client/src/components/user/FormItem/FormItem.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/client/src/index.js" beforeDir="false" afterPath="$PROJECT_DIR$/client/src/index.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/client/src/pages/admin/CreateFormPage.js" beforeDir="false" afterPath="$PROJECT_DIR$/client/src/pages/admin/CreateFormPage.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/client/src/pages/admin/SubmittedFormsPage.js" beforeDir="false" afterPath="$PROJECT_DIR$/client/src/pages/admin/SubmittedFormsPage.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/client/src/pages/user/FillFormPage.js" beforeDir="false" afterPath="$PROJECT_DIR$/client/src/pages/user/FillFormPage.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/client/src/pages/user/FormsPage.js" beforeDir="false" afterPath="$PROJECT_DIR$/client/src/pages/user/FormsPage.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/client/yarn.lock" beforeDir="false" afterPath="$PROJECT_DIR$/client/yarn.lock" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
     <option name="LAST_RESOLUTION" value="IGNORE" />
+  </component>
+  <component name="FileTemplateManagerImpl">
+    <option name="RECENT_TEMPLATES">
+      <list>
+        <option value="JavaScript File" />
+      </list>
+    </option>
   </component>
   <component name="Git.Settings">
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
@@ -31,22 +51,12 @@
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
   </component>
-  <component name="PropertiesComponent">
-    <property name="RunOnceActivity.OpenProjectViewOnStart" value="true" />
-    <property name="RunOnceActivity.ShowReadmeOnStart" value="true" />
-    <property name="WebServerToolWindowFactoryState" value="false" />
-    <property name="javascript.nodejs.core.library.configured.version" value="16.14.0" />
-    <property name="javascript.nodejs.core.library.typings.version" value="16.11.25" />
-    <property name="last_opened_file_path" value="$PROJECT_DIR$/client/src/components" />
-    <property name="node.js.detected.package.eslint" value="true" />
-    <property name="node.js.detected.package.tslint" value="true" />
-    <property name="node.js.selected.package.eslint" value="(autodetect)" />
-    <property name="node.js.selected.package.tslint" value="(autodetect)" />
-    <property name="nodejs_package_manager_path" value="npm" />
-    <property name="settings.editor.selected.configurable" value="preferences.sourceCode.JavaScript" />
-    <property name="ts.external.directory.path" value="C:\Program Files\JetBrains\WebStorm 2021.3.2\plugins\JavaScriptLanguage\jsLanguageServicesImpl\external" />
-    <property name="vue.rearranger.settings.migration" value="true" />
-  </component>
+  <component name="PropertiesComponent"><![CDATA[{
+  "keyToString": {
+    "node.js.selected.package.tslint": "(autodetect)",
+    "ts.external.directory.path": "C:\\Program Files\\JetBrains\\WebStorm 2021.3.2\\plugins\\JavaScriptLanguage\\jsLanguageServicesImpl\\external"
+  }
+}]]></component>
   <component name="RecentsManager">
     <key name="CopyFile.RECENT_KEYS">
       <recent name="C:\projects\EyeClick - Forms Generator\client\src\components" />

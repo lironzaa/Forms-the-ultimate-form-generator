@@ -1,3 +1,5 @@
+import { FormControl, FormLabel, Input } from "@chakra-ui/react";
+
 const FormField = ({ onChange, field }) => {
     const fieldName = Object.keys(field)[0];
     const fieldValue = field[fieldName];
@@ -11,7 +13,7 @@ const FormField = ({ onChange, field }) => {
         <div>
             {Array.isArray(fieldValue) ? (
                 <div>
-                    {fieldName}
+                    <FormLabel fontSize={"3xl"}>{fieldName} section :</FormLabel>
                     <div style={{ marginLeft: '20px' }}>
                         {fieldValue.map((field, index) => (
                             <FormField
@@ -23,11 +25,11 @@ const FormField = ({ onChange, field }) => {
                     </div>
                 </div>
             ) : (
-                <label style={{ display: 'block' }}>
-                    {fieldName} <br/>
-                    <input required={true} onChange={onInputChange} value={field[fieldName]} type='text'
-                           name={fieldName}/>
-                </label>
+                <FormControl>
+                <FormLabel>{fieldName}</FormLabel>
+                <Input required={true} onChange={onInputChange} value={field[fieldName]}
+                type='text' name={fieldName} />
+                </FormControl>
             )}
         </div>
     )

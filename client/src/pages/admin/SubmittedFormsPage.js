@@ -2,6 +2,8 @@ import { useState, useEffect } from 'react';
 import SubmittedFormField from '../../components/admin/SubmittedFormField/SubmittedFormField';
 import { Link } from "react-router-dom";
 import { apiService } from "../../api/api";
+import { Box, Button, Container, Divider, Stack, StackDivider, Text, VStack } from "@chakra-ui/react";
+import AppSpinner from "../../components/common/AppSpinner";
 
 const SubmittedFormsPage = () => {
     const [ forms, setForms ] = useState([]);
@@ -16,24 +18,31 @@ const SubmittedFormsPage = () => {
             .catch(err => setError(err?.response?.data?.message || err.message))
     }, [])
 
-    if (isLoading) return <h1>Loading...</h1>
+    if (isLoading) return <AppSpinner />;
     if (error) return <h1 style={{ color: 'red' }}>{error}</h1>
 
     return (
-        <div>
-            <h1>Submitted Forms Page</h1>
+        <Container>
+          <Text as={'b'} color={"#68D391"} fontSize={"2xl"}>Submitted Forms Page</Text>
             <hr/>
-            <Link to="/admin/form">Create Form</Link>
+              <Link to="/admin/form">
+                <Button my={5} type="submit" width={"100%"} colorScheme='blue'>Create Form</Button>
+              </Link>
             <hr/>
+          <VStack
+            divider={<StackDivider borderColor='gray.200' />}
+            spacing={4}
+            align='stretch'>
             {forms.map(({ email, form }, index) =>
-                (
-                    <div key={index}>
-                        <h5>{email}</h5>
-                        {form.map((field, index) => <SubmittedFormField key={index} field={field}/>)}
-                        <hr/>
-                    </div>
-                ))}
-        </div>
+              (
+                <Box key={index}>
+                  <Text as={'b'} fontSize={"2xl"}>{email}</Text>
+                  {form.map((field, index) => <SubmittedFormField key={index} field={field}/>)}
+                  {/*<Divider color={"#68D391"} />*/}
+                </Box>
+              ))}
+          </VStack>
+        </Container>
     )
 }
 
