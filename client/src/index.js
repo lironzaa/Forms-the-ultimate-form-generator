@@ -11,6 +11,7 @@ import SubmittedFormsPage from "./pages/admin/SubmittedFormsPage";
 import CreateFormPage from "./pages/admin/CreateFormPage";
 import NavBar from "./components/Layout/NavBar/NavBar";
 import { ChakraProvider } from "@chakra-ui/react";
+import './app.css';
 
 const rootElement = document.getElementById("root");
 render(

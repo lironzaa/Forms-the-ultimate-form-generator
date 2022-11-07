@@ -5,22 +5,11 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="a1b20d3a-3d13-425e-a9c5-70ecb14abc28" name="Changes" comment="">
-      <change afterPath="$PROJECT_DIR$/client/src/components/common/AppSpinner.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/client/src/app.css" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/client/package.json" beforeDir="false" afterPath="$PROJECT_DIR$/client/package.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/client/src/App.js" beforeDir="false" afterPath="$PROJECT_DIR$/client/src/App.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/client/src/components/Layout/NavBar/NavBar.js" beforeDir="false" afterPath="$PROJECT_DIR$/client/src/components/Layout/NavBar/NavBar.js" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/client/src/components/admin/CreateFormField/CreateFormField.js" beforeDir="false" afterPath="$PROJECT_DIR$/client/src/components/admin/CreateFormField/CreateFormField.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/client/src/components/admin/SubmittedFormField/SubmittedFormField.js" beforeDir="false" afterPath="$PROJECT_DIR$/client/src/components/admin/SubmittedFormField/SubmittedFormField.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/client/src/components/user/FormField/FormField.js" beforeDir="false" afterPath="$PROJECT_DIR$/client/src/components/user/FormField/FormField.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/client/src/components/user/FormFields/FormFields.js" beforeDir="false" afterPath="$PROJECT_DIR$/client/src/components/user/FormFields/FormFields.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/client/src/components/user/FormItem/FormItem.js" beforeDir="false" afterPath="$PROJECT_DIR$/client/src/components/user/FormItem/FormItem.js" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/client/src/index.js" beforeDir="false" afterPath="$PROJECT_DIR$/client/src/index.js" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/client/src/pages/admin/CreateFormPage.js" beforeDir="false" afterPath="$PROJECT_DIR$/client/src/pages/admin/CreateFormPage.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/client/src/pages/admin/SubmittedFormsPage.js" beforeDir="false" afterPath="$PROJECT_DIR$/client/src/pages/admin/SubmittedFormsPage.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/client/src/pages/user/FillFormPage.js" beforeDir="false" afterPath="$PROJECT_DIR$/client/src/pages/user/FillFormPage.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/client/src/pages/user/FormsPage.js" beforeDir="false" afterPath="$PROJECT_DIR$/client/src/pages/user/FormsPage.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/client/yarn.lock" beforeDir="false" afterPath="$PROJECT_DIR$/client/yarn.lock" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -31,6 +20,7 @@
     <option name="RECENT_TEMPLATES">
       <list>
         <option value="JavaScript File" />
+        <option value="CSS File" />
       </list>
     </option>
   </component>
@@ -53,6 +43,7 @@
   </component>
   <component name="PropertiesComponent"><![CDATA[{
   "keyToString": {
+    "list.type.of.created.stylesheet": "CSS",
     "node.js.selected.package.tslint": "(autodetect)",
     "ts.external.directory.path": "C:\\Program Files\\JetBrains\\WebStorm 2021.3.2\\plugins\\JavaScriptLanguage\\jsLanguageServicesImpl\\external"
   }
